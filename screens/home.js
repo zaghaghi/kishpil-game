@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
+import TouchableRect from '../components';
 
 export default class HomeScreen extends Component {
     static navigationOptions = {
@@ -11,16 +12,12 @@ export default class HomeScreen extends Component {
         return (
             <View style={styles.fullColumn}>
                 <View style={styles.fullRow}>
-                    <View style={[styles.fullColumn, { backgroundColor: '#0fa' }]}>
-                    </View>
-                    <View style={[styles.fullColumn, { backgroundColor: '#af0' }]}>
-                    </View>
+                    <TouchableRect color='#0fa'/>
+                    <TouchableRect color='#af0'/>
                 </View>
                 <View style={styles.fullRow}>
-                    <View style={[styles.fullColumn, { backgroundColor: '#a0f' }]}>
-                    </View>
-                    <View style={[styles.fullColumn, { backgroundColor: '#0af' }]}>
-                    </View>
+                    <TouchableRect color='#a0f' />
+                    <TouchableRect color='#0af' />
                 </View>
             </View>
         );
@@ -30,10 +27,14 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
     fullRow: {
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        backgroundColor: '#000'
     },
     fullColumn: {
         flex: 1,
-        flexDirection: 'column'
+        flexDirection: 'column',
+        padding: 4,
+        backgroundColor: '#000'
+
     }
 });
