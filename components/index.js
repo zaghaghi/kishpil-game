@@ -17,13 +17,18 @@ export default class TouchableRect extends Component {
                 duration={500}
                 style={[styles.full, { backgroundColor: color }]}>
                 <TouchableOpacity style={styles.touchable} onPress={() => {
+                    if (!this.props.onPress) {
+                        return;
+                    }
                     this._view.zoomOut();
                     this.props.onPress(playerName, color);
-                    setTimeout(() => {
-                        this.setState({ rerenders: this.state.rerenders + 1 }, () => {
-                            this._view.zoomIn();
-                        })
-                    }, Math.random() * 1000 + 500)
+                    if (this.props.revealAgain) {
+                        setTimeout(() => {
+                            this.setState({ rerenders: this.state.rerenders + 1 }, () => {
+                                this._view.zoomIn();
+                            })
+                        }, Math.random() * 1000 + 500)
+                    }
                 }}>
                     <Text style={styles.text}>{playerName}</Text>
                 </TouchableOpacity>

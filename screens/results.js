@@ -3,7 +3,7 @@ import { StyleSheet, View, StatusBar } from 'react-native';
 import TouchableRect from '../components';
 import Colors from '../components/colors';
 
-export default class HomeScreen extends Component {
+export default class ResultScreen extends Component {
     static navigationOptions = {
         title: '',
         header: null,
@@ -14,6 +14,8 @@ export default class HomeScreen extends Component {
     }
 
     render() {
+        const { navigation } = this.props;
+        const scores = navigation.getParam('scores', {});
         return (
             <View style={styles.fullColumn}>
                 <StatusBar
@@ -21,27 +23,31 @@ export default class HomeScreen extends Component {
                     barStyle="light-content"
                 />
                 <View style={styles.fullRow}>
-                    <TouchableRect colors={[Colors[0]]} text='P1' revealAgain={false} onPress={this.playerTouch}/>
-                    <TouchableRect colors={[Colors[1]]} text='P2' revealAgain={false} onPress={this.playerTouch}/>
+                    <TouchableRect 
+                        colors={[Colors[0]]}
+                        score={scores[Colors[0]]}
+                        text={scores[Colors[0]]}
+                    />
+                    <TouchableRect 
+                        colors={[Colors[1]]}
+                        score={scores[Colors[1]]}
+                        text={scores[Colors[1]]}
+                    />
                 </View>
                 <View style={styles.fullRow}>
-                    <TouchableRect colors={[Colors[2]]} text='P3' revealAgain={false} onPress={this.playerTouch}/>
-                    <TouchableRect colors={[Colors[3]]} text='P4' revealAgain={false} onPress={this.playerTouch}/>
+                    <TouchableRect 
+                        colors={[Colors[2]]}
+                        score={scores[Colors[2]]}
+                        text={scores[Colors[2]]}
+                    />
+                    <TouchableRect 
+                        colors={[Colors[3]]}
+                        score={scores[Colors[3]]}
+                        text={scores[Colors[3]]}
+                    />
                 </View>
             </View>
         );
-    }
-
-    playerTouch = (playerName) => {
-        const { navigate } = this.props.navigation;
-        startedPlayers = this.state.startedPlayers;
-        startedPlayers[playerName] = 1;
-        this.setState({ startedPlayers }, () => {
-            items = Object.keys(this.state.startedPlayers).length;
-            if (items == 4) {
-                navigate('Level1')
-            }
-        });
     }
 }
 
