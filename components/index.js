@@ -6,11 +6,15 @@ export default class TouchableRect extends Component {
     render() {
         const playerName = this.props.text;
         return (
-            <Animatable.View ref={(ref) => this._view = ref} style={[styles.full, {backgroundColor: this.props.color}]}>
+            <Animatable.View 
+                ref={(ref) => this._view = ref}
+                animation="zoomIn"
+                duration={500}
+                style={[styles.full, { backgroundColor: this.props.color }]}>
                 <TouchableHighlight style={styles.touchable} onPress={() => {
-                this._view.zoomOut();
+                    this._view.zoomOut();
                     this.props.onPress(playerName);
-            }}>
+                }}>
                     <Text style={styles.text}>{playerName}</Text>
                 </TouchableHighlight>
             </Animatable.View>
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
         margin: 4,
     },
     touchable: {
-        flex:1,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
     },
