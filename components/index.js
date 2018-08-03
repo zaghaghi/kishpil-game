@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable';
+var Sound = require('react-native-sound');
+Sound.setCategory('Playback');
+
+
 
 export default class TouchableRect extends Component {
     state = {
         rerenders: 0
     }
     revealTimer = null;
+    blockTouch = false;
+    beep = new Sound(require('../assets/sounds/beep.mp3'), (error) => {
+        if (error) {
+            console.log('failed to load the sound', error);
+            return;
+        }
+        // loaded successfully
+        console.log('loaded successfully');
+        //console.log('duration in seconds: ' + beep.getDuration() + 'number of channels: ' + beep.getNumberOfChannels());
+    });
 
     render() {
         const playerName = this.props.text;
         const color = this._randomColor(this.props.colors);
         if (this.props.revealAgain) {
             this.revealTimer = setTimeout(() => {
+                this.blockTouch = true;
                 this._view.zoomOut();
                 setTimeout(() => {
                     this.setState({ rerenders: this.state.rerenders + 1 }, () => {
                         this._view.zoomIn();
+                        this.blockTouch = false;
                     })
                 }, Math.random() * 1000 + 500)
             }, Math.random() * 1000 + 1500);
@@ -28,11 +44,19 @@ export default class TouchableRect extends Component {
                 duration={500}
                 style={[styles.full, { backgroundColor: color }]}>
                 <TouchableOpacity style={styles.touchable} onPress={() => {
+                    if (this.blockTouch) {
+                        return;
+                    }
                     if (!this.props.onPress) {
                         return;
                     }
+                    console.log("Rect Clicked");
+                    this.blockTouch = true;
                     this._view.zoomOut();
                     this.props.onPress(playerName, color);
+                    this.beep.stop(() => {
+                        this.beep.play();
+                    });
                     if (this.props.revealAgain) {
                         if (this.revealTimer) {
                             clearTimeout(this.revealTimer);
@@ -40,6 +64,7 @@ export default class TouchableRect extends Component {
                         setTimeout(() => {
                             this.setState({ rerenders: this.state.rerenders + 1 }, () => {
                                 this._view.zoomIn();
+                                this.blockTouch = false;
                             })
                         }, Math.random() * 1000 + 500)
                     }
