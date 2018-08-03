@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import TouchableRect from '../components';
+import Colors from '../components/colors';
 
 export default class Level1Screen extends Component {
     static navigationOptions = {
@@ -8,35 +9,38 @@ export default class Level1Screen extends Component {
         header: null,
     };
 
-    state = {
-        startedPlayers: {}
+    scores = {}
+
+    constructor(props) {
+        super(props);
+        for(color in Colors) {
+            this.scores[Colors[color]] = 0;
+        }
+
+        setTimeout(() => {
+
+        }, 30000)
     }
 
     render() {
         return (
             <View style={styles.fullColumn}>
                 <View style={styles.fullRow}>
-                    <TouchableRect color='#0fa' text='P1' onPress={this.playerTouch} />
-                    <TouchableRect color='#af0' text='P2' onPress={this.playerTouch} />
+                    <TouchableRect colors={Colors} onPress={this.playerTouch} />
+                    <TouchableRect colors={Colors} onPress={this.playerTouch} />
                 </View>
                 <View style={styles.fullRow}>
-                    <TouchableRect color='#a0f' text='P3' onPress={this.playerTouch} />
-                    <TouchableRect color='#0af' text='P4' onPress={this.playerTouch} />
+                    <TouchableRect colors={Colors} onPress={this.playerTouch} />
+                    <TouchableRect colors={Colors} onPress={this.playerTouch} />
                 </View>
             </View>
         );
     }
 
-    playerTouch = (playerName) => {
+    playerTouch = (playerName, colorCode) => {
         const { navigate } = this.props.navigation;
-        startedPlayers = this.state.startedPlayers;
-        startedPlayers[playerName] = 1;
-        this.setState({ startedPlayers }, () => {
-            items = Object.keys(this.state.startedPlayers).length;
-            if (items == 4) {
-                navigate('Level1')
-            }
-        });
+        this.scores[colorCode]++;
+        console.log(this.scores);
     }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import TouchableRect from '../components';
+import Colors from '../components/colors';
 
 export default class HomeScreen extends Component {
     static navigationOptions = {
@@ -16,12 +17,12 @@ export default class HomeScreen extends Component {
         return (
             <View style={styles.fullColumn}>
                 <View style={styles.fullRow}>
-                    <TouchableRect color='#0fa' text='P1' onPress={this.playerTouch}/>
-                    <TouchableRect color='#af0' text='P2' onPress={this.playerTouch}/>
+                    <TouchableRect colors={[Colors[0]]} text='P1' onPress={this.playerTouch}/>
+                    <TouchableRect colors={[Colors[1]]} text='P2' onPress={this.playerTouch}/>
                 </View>
                 <View style={styles.fullRow}>
-                    <TouchableRect color='#a0f' text='P3' onPress={this.playerTouch}/>
-                    <TouchableRect color='#0af' text='P4' onPress={this.playerTouch}/>
+                    <TouchableRect colors={[Colors[2]]} text='P3' onPress={this.playerTouch}/>
+                    <TouchableRect colors={[Colors[3]]} text='P4' onPress={this.playerTouch}/>
                 </View>
             </View>
         );
