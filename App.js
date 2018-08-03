@@ -4,7 +4,7 @@ import HomeScreen from './screens/home';
 import Level1Screen from './screens/level1';
 import ResultScreen from './screens/results';
 
-const App = createStackNavigator({
+const App = createSwitchNavigator({
   Home: {
     screen: HomeScreen
   },
