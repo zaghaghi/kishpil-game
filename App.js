@@ -6,6 +6,9 @@ const App = createStackNavigator({
   Home: {
     screen: HomeScreen
   },
+  Home2: {
+    screen: HomeScreen
+  }
 });
 
 export default App;
