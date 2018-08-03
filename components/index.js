@@ -4,7 +4,19 @@ import * as Animatable from 'react-native-animatable';
 var Sound = require('react-native-sound');
 Sound.setCategory('Playback');
 
-
+Animatable.initializeRegistryWithDefinitions({
+    pulse: {
+        0: {
+            scale: 1,
+        },
+        0.5: {
+            scale: 3,
+        },
+        1: {
+            scale: 1,
+        },
+    }
+});
 
 export default class TouchableRect extends Component {
     state = {
@@ -22,11 +34,20 @@ export default class TouchableRect extends Component {
         //console.log('duration in seconds: ' + beep.getDuration() + 'number of channels: ' + beep.getNumberOfChannels());
     });
 
+    componentWillUnmount() {
+        if (this.revealTimer) {
+            clearTimeout(this.revealTimer);
+            this.revealTimer = null;
+        }
+    }
     render() {
         const playerName = this.props.text;
         const color = this._randomColor(this.props.colors);
         if (this.props.revealAgain) {
             this.revealTimer = setTimeout(() => {
+                if (!this.revealTimer) {
+                    return;
+                }
                 this.blockTouch = true;
                 this._view.zoomOut();
                 setTimeout(() => {
@@ -60,6 +81,7 @@ export default class TouchableRect extends Component {
                     if (this.props.revealAgain) {
                         if (this.revealTimer) {
                             clearTimeout(this.revealTimer);
+                            this.revealTimer = null;
                         }
                         setTimeout(() => {
                             this.setState({ rerenders: this.state.rerenders + 1 }, () => {
@@ -69,7 +91,11 @@ export default class TouchableRect extends Component {
                         }, Math.random() * 1000 + 500)
                     }
                 }}>
-                    <Text style={styles.text}>{playerName}</Text>
+                    <Animatable.Text 
+                        style={styles.text}
+                        animation={this.props.winner ? 'pulse' : null}
+                        iterationCount='infinite'
+                    >{playerName}</Animatable.Text>
                 </TouchableOpacity>
             </Animatable.View>
         );
