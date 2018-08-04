@@ -3,23 +3,26 @@ import { StyleSheet, View, StatusBar } from 'react-native';
 import TouchableRect from '../components';
 import Colors from '../components/colors';
 
-export default class Level1Screen extends Component {
+export default class Level2Screen extends Component {
     static navigationOptions = {
         title: '',
         header: null,
     };
 
     scores = {}
-
+    
     constructor(props) {
         super(props);
-        for(color in Colors) {
+        for (color in Colors) {
             this.scores[Colors[color]] = 0;
         }
-
+        
+        const { navigation } = this.props;
+        this.scores = navigation.getParam('scores', {});
+        
         setTimeout(() => {
             const { navigate } = this.props.navigation;
-            navigate('Level2', {scores: this.scores});
+            navigate('Results', { scores: this.scores });
         }, 5000)
     }
 
@@ -33,8 +36,20 @@ export default class Level1Screen extends Component {
                 <View style={styles.fullRow}>
                     <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
                     <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
+                    <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
                 </View>
                 <View style={styles.fullRow}>
+                    <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
+                    <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
+                    <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
+                </View>
+                <View style={styles.fullRow}>
+                    <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
+                    <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
+                    <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
+                </View>
+                <View style={styles.fullRow}>
+                    <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
                     <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
                     <TouchableRect colors={Colors} revealAgain={true} onPress={this.playerTouch} />
                 </View>
