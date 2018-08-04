@@ -39,7 +39,7 @@ export default class HomeScreen extends Component {
         this.setState({ startedPlayers }, () => {
             items = Object.keys(this.state.startedPlayers).length;
             if (items == 4) {
-                navigate('Level1')
+                navigate('Start')
             }
         });
     }

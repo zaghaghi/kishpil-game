@@ -30,7 +30,7 @@ export default class TouchableRect extends Component {
             return;
         }
         // loaded successfully
-        console.log('loaded successfully');
+        //console.log('loaded successfully');
         //console.log('duration in seconds: ' + beep.getDuration() + 'number of channels: ' + beep.getNumberOfChannels());
     });
 
@@ -71,7 +71,7 @@ export default class TouchableRect extends Component {
                     if (!this.props.onPress) {
                         return;
                     }
-                    console.log("Rect Clicked");
+                    //console.log("Rect Clicked");
                     this.blockTouch = true;
                     this._view.zoomOut();
                     this.props.onPress(playerName, color);
