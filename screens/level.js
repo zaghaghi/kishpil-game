@@ -13,8 +13,6 @@ export default class LevelScreen extends Component {
 
     constructor(props) {
         super(props);
-        console.log('constructor');
-
         const { navigation } = this.props;
         this.scores = navigation.getParam('scores', {});
         if (this.props.initScores) {
@@ -65,7 +63,6 @@ export default class LevelScreen extends Component {
 
     playerTouch = (playerName, colorCode) => {
         this.scores[colorCode]++;
-        console.log(this.scores);
     }
 }
 
