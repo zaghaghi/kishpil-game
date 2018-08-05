@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1024"
+   height="1024"
+   viewBox="0 0 1024 1024"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="appicon.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="583.35973"
+     inkscape:cy="627.16348"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1680"
+     inkscape:window-height="937"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-26.06671)">
+    <g
+       id="g2316"
+       transform="matrix(0.96874955,0,0,0.96875044,16.000002,16.814116)"
+       style="stroke-width:1.03225827">
+      <rect
+         ry="61.935459"
+         rx="61.935513"
+         y="538.06665"
+         x="0"
+         height="512"
+         width="512"
+         id="rect1719"
+         style="opacity:1;fill:#ffabab;fill-opacity:1;stroke:#ffffff;stroke-width:30.96774292;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         ry="61.935459"
+         rx="61.935513"
+         style="opacity:1;fill:#ffdaab;fill-opacity:1;stroke:#ffffff;stroke-width:30.96774292;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1721"
+         width="512"
+         height="512"
+         x="0"
+         y="26.06671" />
+      <rect
+         ry="61.935459"
+         rx="61.935513"
+         y="26.06671"
+         x="512"
+         height="512"
+         width="512"
+         id="rect1723"
+         style="opacity:1;fill:#abe4ff;fill-opacity:1;stroke:#ffffff;stroke-width:30.96774292;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         ry="61.935459"
+         rx="61.935513"
+         style="opacity:1;fill:#ddffab;fill-opacity:1;stroke:#ffffff;stroke-width:30.96774292;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1725"
+         width="512"
+         height="512"
+         x="512"
+         y="538.06671" />
+      <circle
+         r="256"
+         cy="538.06671"
+         cx="512"
+         id="path2278"
+         style="opacity:1;fill:#d9abff;fill-opacity:1;stroke:#ffffff;stroke-width:30.96774292;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text2284"
+         y="607.95734"
+         x="373.0625"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:IRANSans;-inkscape-font-specification:IRANSans;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:25.80644989;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:25.80644989;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           y="607.95734"
+           x="373.0625"
+           id="tspan2282"
+           sodipodi:role="line">KG</tspan></text>
+    </g>
+  </g>
+</svg>
